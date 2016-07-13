@@ -13,8 +13,7 @@ app.get('/',function(req,res) {
 });
 
 
-/*var nodemailer = require("nodemailer");
-
+var nodemailer = require("nodemailer");
 
 var privateInfo = require("./private") || {
     "private": {
@@ -59,7 +58,7 @@ app.post('/sendEmail',function(req,res) {
     else res.json({"msg":"Please fill in all the parameters","success":"0"});
 });
 
-*/
+
 
 app.listen(PORT,function(req,res) {
     console.log("Magic happening with Email Via Gmail App !! @ " + BASE_URL);
