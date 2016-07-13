@@ -1,7 +1,8 @@
 var express = require("express");
 var nodemailer = require("nodemailer");
 var bodyParser = require("body-parser");
-var PORT = process.env.PORT || "1337";
+var PORT = process.env.PORT || 1337;
+var BASE_URL = process.env.PORT ? "https://email-via-gmail-0904.herokuapp.com/" : "http://localhost:3000";
 
 var privateInfo = require("./private") || {
     "private": {
@@ -54,5 +55,5 @@ app.post('/sendEmail',function(req,res) {
 });
 
 app.listen(PORT,function(req,res) {
-    console.log("Magic happening with Email Via Gmail App !!");
+    console.log("Magic happening with Email Via Gmail App !! @ " + BASE_URL);
 });
