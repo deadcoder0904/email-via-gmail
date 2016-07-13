@@ -8,6 +8,10 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+app.get('/',function(req,res) {
+    res.json({"msg": "Email Via Gmail App Created by A2K."});
+});
+
 app.post('/sendEmail',function(req,res) {
     
     var body = req.body;
