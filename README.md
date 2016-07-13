@@ -2,7 +2,7 @@
 
 ### Open a temporary Gmail account only to send emails. Check out this link
 
-[Less Secure Apps in Gmail][a]{:target="_blank"}
+[Less Secure Apps in Gmail][a]
 
 [a]: https://www.google.com/settings/security/lesssecureapps "Less Secure Apps in Gmail"
 
