@@ -1,8 +1,20 @@
 var express = require("express");
-var nodemailer = require("nodemailer");
-var bodyParser = require("body-parser");
 var PORT = process.env.PORT || 1337;
 var BASE_URL = process.env.PORT ? "https://email-via-gmail-0904.herokuapp.com/" : "localhost:1337";
+var bodyParser = require("body-parser");
+
+var app = express();
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+app.get('/',function(req,res) {
+    res.json({"msg": "Email Via Gmail App Created by A2K."});
+});
+
+
+/*var nodemailer = require("nodemailer");
+
 
 var privateInfo = require("./private") || {
     "private": {
@@ -13,14 +25,6 @@ var privateInfo = require("./private") || {
     }
 };
 
-var app = express();
-
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-
-app.get('/',function(req,res) {
-    res.json({"msg": "Email Via Gmail App Created by A2K."});
-});
 
 app.post('/sendEmail',function(req,res) {
     var body = req.body;
@@ -54,6 +58,8 @@ app.post('/sendEmail',function(req,res) {
     }
     else res.json({"msg":"Please fill in all the parameters","success":"0"});
 });
+
+*/
 
 app.listen(PORT,function(req,res) {
     console.log("Magic happening with Email Via Gmail App !! @ " + BASE_URL);
