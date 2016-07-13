@@ -13,18 +13,9 @@ app.get('/',function(req,res) {
 });
 
 
-var nodemailer = require("nodemailer") || require("node-mailer");
+var nodemailer = require("nodemailer");
 
-var obj = {
-    "private": {
-        "gmail": {
-          "username": process.env.GMAIL_USERNAME,
-          "password": process.env.GMAIL_PASSWORD
-        }
-    }
-};
-
-var privateInfo = require("./private") || obj;
+var privateInfo = require("./private");
 
 
 app.post('/sendEmail',function(req,res) {
