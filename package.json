@@ -14,5 +14,5 @@
     "express": "^4.14.0",
     "node-mailer": "^0.1.1"
   },
-  "engine": "node <= 6.1.0, npm <= 3.8.6"
+  "engines": "node <= 6.1.0, npm <= 3.8.6"
 }
