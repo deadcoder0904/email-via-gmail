@@ -1,7 +1,12 @@
 var express = require("express");
 var nodemailer = require("nodemailer");
 var privateInfo = require("./private");
+var bodyParser = require("body-parser");
+
 var app = express();
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.post('/sendEmail',function(req,res) {
     var smtpTransport = nodemailer.createTransport("SMTP", {
@@ -11,12 +16,11 @@ app.post('/sendEmail',function(req,res) {
             pass: privateInfo.private.gmail.password
         }
     });
-    
-    var query = req.query;
-    var name = query.name;
-    var email = query.email;
-    var message = query.message;
-
+    var body = req.body;
+    var name = body.name;
+    var email = body.email;
+    var message = body.message;
+    console.log(name + " " + email + " " + message);
     smtpTransport.sendMail({
             from: "< " + privateInfo.private.gmail.username + " >", // sender address
             to: "akshaykadam0904@gmail.com", // comma separated list of receivers
@@ -28,7 +32,7 @@ app.post('/sendEmail',function(req,res) {
                 res.json({"msg":"Error sending Email. Please check your Network Connection or try again later","success":"0"});
             } else {
                 console.log("Message sent: " + response.message);
-                res.json({"msg":"Email successfully sent","success":"1"});
+                res.json({"msg":"Email successfully sent to akshaykadam0904@gmail.com","success":"1"});
             }
     });
 });
