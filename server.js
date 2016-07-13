@@ -1,6 +1,6 @@
 var express = require("express");
 var PORT = process.env.PORT || 1337;
-var BASE_URL = process.env.PORT ? "https://email-via-gmail-0904.herokuapp.com/" : "localhost:1337";
+var BASE_URL = process.env.PORT ? "https://emailviagmail0904-deadcoder0904.rhcloud.com" : "localhost:1337";
 var bodyParser = require("body-parser");
 
 var app = express();
