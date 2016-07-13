@@ -2,7 +2,7 @@ var express = require("express");
 var nodemailer = require("nodemailer");
 var bodyParser = require("body-parser");
 var PORT = process.env.PORT || 1337;
-var BASE_URL = process.env.PORT ? "https://email-via-gmail-0904.herokuapp.com/" : "http://localhost:3000";
+var BASE_URL = process.env.PORT ? "https://email-via-gmail-0904.herokuapp.com/" : "localhost:1337";
 
 var privateInfo = require("./private") || {
     "private": {
@@ -12,6 +12,7 @@ var privateInfo = require("./private") || {
         }
     }
 };
+
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -22,13 +23,12 @@ app.get('/',function(req,res) {
 });
 
 app.post('/sendEmail',function(req,res) {
-    
     var body = req.body;
     var name = body.name;
     var email = body.email;
     var message = body.message;
 
-    if(!name && !email && !message){
+    if(name !== undefined && email !== undefined && message !== undefined && name !== "" && email !== "" && message !== ""){
         var smtpTransport = nodemailer.createTransport("SMTP", {
             service: "Gmail",
             auth: {
@@ -52,6 +52,7 @@ app.post('/sendEmail',function(req,res) {
                 }
         });
     }
+    else res.json({"msg":"Please fill in all the parameters","success":"0"});
 });
 
 app.listen(PORT,function(req,res) {
