@@ -1,8 +1,16 @@
 var express = require("express");
 var nodemailer = require("nodemailer");
-var privateInfo = require("./private");
 var bodyParser = require("body-parser");
+var PORT = process.env.PORT || "1337";
 
+var privateInfo = require("./private") || {
+    "private": {
+        "gmail": {
+          "username": process.env.GMAIL_USERNAME,
+          "password": process.env.GMAIL_PASSWORD
+        }
+    }
+};
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -23,13 +31,13 @@ app.post('/sendEmail',function(req,res) {
         var smtpTransport = nodemailer.createTransport("SMTP", {
             service: "Gmail",
             auth: {
-                user: privateInfo.private.gmail.username || process.env.GMAIL_USERNAME,
-                pass: privateInfo.private.gmail.password || process.env.GMAIL_PASSWORD
+                user: privateInfo.private.gmail.username,
+                pass: privateInfo.private.gmail.password
             }
         });
         
         smtpTransport.sendMail({
-                from: "< " + (privateInfo.private.gmail.username || process.env.GMAIL_USERNAME) + " >", // sender address
+                from: "< " + (privateInfo.private.gmail.username) + " >", // sender address
                 to: "akshaykadam0904@gmail.com", // comma separated list of receivers
                 subject: "Email sent from akshaykadam.me", // Subject line
                 text: "The email is sent from akshaykadam.me\n\nMy name is " + name + " & email is " + email + " \n\n" + message// plaintext body
@@ -45,6 +53,6 @@ app.post('/sendEmail',function(req,res) {
     }
 });
 
-app.listen('1337',function(req,res) {
-    console.log("Magic happening @ http://localhost:1337");
+app.listen(PORT,function(req,res) {
+    console.log("Magic happening with Email Via Gmail App !!");
 });
