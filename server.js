@@ -1,6 +1,6 @@
 var express = require("express");
-var PORT = process.env.PORT || 1337;
-var BASE_URL = process.env.PORT ? "https://email-via-gmail-0904.herokuapp.com" : "localhost:1337";
+var PORT = process.env.OPENSHIFT_NODEJS_PORT || 1337;
+var SERVER = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
 var bodyParser = require("body-parser");
 
 var app = express();
@@ -62,6 +62,6 @@ app.post('/sendEmail',function(req,res) {
 
 
 
-app.listen(PORT,function(req,res) {
-    console.log("Magic happening with Email Via Gmail App !! @ " + BASE_URL);
+app.listen(PORT,SERVER,function(req,res) {
+    console.log("Magic happening with Email Via Gmail App !! @ " + SERVER + ":" + PORT);
 });
