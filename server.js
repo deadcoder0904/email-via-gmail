@@ -51,8 +51,6 @@ app.post('/sendEmail',function(req,res) {
     else res.json({"msg":"Please fill in all the parameters","success":"0"});
 });
 
-
-
 app.listen(PORT,SERVER,function(req,res) {
     console.log("Magic happening with Email Via Gmail App !! @ " + SERVER + ":" + PORT);
 });
