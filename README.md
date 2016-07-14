@@ -3,6 +3,7 @@
 ### Open a temporary Gmail account only to send emails. Check out this link
 
 [Less Secure Apps in Gmail][a]
+
 [Unlock Google Captcha][b]
 
 [a]: https://www.google.com/settings/security/lesssecureapps "Less Secure Apps in Gmail"
