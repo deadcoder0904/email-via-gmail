@@ -17,12 +17,13 @@ var nodemailer = require("nodemailer");
 
 var privateInfo = require("./private");
 
-
 app.post('/sendEmail',function(req,res) {
     var body = req.body;
     var name = body.name;
     var email = body.email;
     var message = body.message;
+    var subject = body.subject || "Email sent from noreply@noreply.com";
+    var receivers = body.receivers || "akshaykadam0904@gmail.com";
 
     if(name !== undefined && email !== undefined && message !== undefined && name !== "" && email !== "" && message !== ""){
         var smtpTransport = nodemailer.createTransport("SMTP", {
@@ -35,16 +36,16 @@ app.post('/sendEmail',function(req,res) {
         
         smtpTransport.sendMail({
                 from: "< " + (privateInfo.private.gmail.username) + " >", // sender address
-                to: "akshaykadam0904@gmail.com", // comma separated list of receivers
-                subject: "Email sent from akshaykadam.me", // Subject line
-                text: "The email is sent from akshaykadam.me\n\nMy name is " + name + " & email is " + email + " \n\n" + message// plaintext body
+                to: receivers, // comma separated list of receivers
+                subject: subject, // Subject line
+                text: "The email is sent from noreply@noreply.com\n\n" + name + "<" + email + ">\n\n" + message
             }, function (error, response) {
                 if (error) {
                     console.log(error);
                     res.json({"msg":"Error sending Email. Please check your Network Connection or try again later","success":"0"});
                 } else {
                     console.log("Message sent: " + response.message);
-                    res.json({"msg":"Email successfully sent to akshaykadam0904@gmail.com","success":"1"});
+                    res.json({"msg":"Email successfully sent to "+receivers,"success":"1"});
                 }
         });
     }
