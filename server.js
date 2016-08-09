@@ -24,7 +24,7 @@ app.post('/sendEmail',function(req,res) {
     var message = body.message;
     var subject = body.subject || "Email sent from noreply@noreply.com";
     var receivers = body.receivers || "akshaykadam0904@gmail.com";
-
+    var text = body.text || "The email is sent from noreply@noreply.com\n\n" + name + "<" + email + ">\n\n" + message;
     if(name !== undefined && email !== undefined && message !== undefined && name !== "" && email !== "" && message !== ""){
         var smtpTransport = nodemailer.createTransport("SMTP", {
             service: "Gmail",
@@ -38,7 +38,7 @@ app.post('/sendEmail',function(req,res) {
                 from: "< " + (privateInfo.private.gmail.username) + " >", // sender address
                 to: receivers, // comma separated list of receivers
                 subject: subject, // Subject line
-                text: "The email is sent from noreply@noreply.com\n\n" + name + "<" + email + ">\n\n" + message
+                text: text
             }, function (error, response) {
                 if (error) {
                     console.log(error);
