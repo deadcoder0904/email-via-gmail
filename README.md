@@ -29,3 +29,5 @@ module.exports = {
 ### Start your application with ```npm start```
 
 ### Most probably the application won't start & will give you an error regarding ```nodemailer```. If so, then install ```nodemailer@0.7.1``` & viola everything will work fine.
+
+### NPM PACKAGE AVAILABLE HERE :point_right: [email-via-gmail](https://www.npmjs.com/package/email-via-gmail)
