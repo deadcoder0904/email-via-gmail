@@ -12,7 +12,6 @@ app.get('/',function(req,res) {
     res.json({"msg": "Email Via Gmail App Created by A2K."});
 });
 
-
 var nodemailer = require("nodemailer");
 
 var privateInfo = require("./private");

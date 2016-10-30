@@ -1,4 +1,4 @@
-# email-via-gmail
+# email-via-gmail [![Build Status](https://travis-ci.org/deadcoder0904/email-via-gmail.svg?branch=master)](https://travis-ci.org/deadcoder0904/email-via-gmail)
 
 ### Open a temporary Gmail account only to send emails. Check out this link
 
