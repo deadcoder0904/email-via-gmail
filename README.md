@@ -1,4 +1,6 @@
-# email-via-gmail [![Build Status](https://travis-ci.org/deadcoder0904/email-via-gmail.svg?branch=master)](https://travis-ci.org/deadcoder0904/email-via-gmail)
+# email-via-gmail [![Build Status](https://travis-ci.org/deadcoder0904/email-via-gmail.svg?branch=master)](https://travis-ci.org/deadcoder0904/email-via-gmail) [![npm version](https://badge.fury.io/js/email-via-gmail.svg)](https://badge.fury.io/js/email-via-gmail)
+
+[![NPM](https://nodei.co/npm/email-via-gmail.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/email-via-gmail/)
 
 ### Open a temporary Gmail account only to send emails. Check out this link
 
