@@ -1,4 +1,4 @@
-# email-via-gmail [![Build Status](https://travis-ci.org/deadcoder0904/email-via-gmail.svg?branch=master)](https://travis-ci.org/deadcoder0904/email-via-gmail) [![npm version](https://badge.fury.io/js/email-via-gmail.svg)](https://badge.fury.io/js/email-via-gmail) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/deadcoder0904/email-via-gmail/issues) [![HitCount](https://hitt.herokuapp.com/deadcoder0904/email-via-gmail.svg)](https://github.com/deadcoder0904/email-via-gmail)
+# email-via-gmail [![Build Status](https://travis-ci.org/deadcoder0904/email-via-gmail.svg?branch=master)](https://travis-ci.org/deadcoder0904/email-via-gmail) [![npm version](https://badge.fury.io/js/email-via-gmail.svg)](https://badge.fury.io/js/email-via-gmail) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/deadcoder0904/email-via-gmail/issues) 
 
 [![NPM](https://nodei.co/npm/email-via-gmail.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/email-via-gmail/)
 
